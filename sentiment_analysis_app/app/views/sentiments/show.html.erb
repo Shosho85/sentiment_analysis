@@ -1,0 +1,8 @@
+<h2> <%= @sentiment.text %> </h2>
+<h3> <%= @sentiment.behavior %> </h3>
+<h3> <%= @sentiment.rating %> </h3>
+
+<h4 id="link">
+	<%= link_to 'Homepage', root_path %> | 
+	<%= link_to 'Back to Post', new_sentiment_path %> 
+</h4>
