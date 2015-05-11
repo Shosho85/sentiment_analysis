@@ -1,10 +1,12 @@
-<% @sentiments.each do |sentiment| %>
-	<li>
-		<%= sentiment.text %> | 
-		<%= sentiment.behavior %> | 
-		<%= sentiment.rating %>
-	</li>
-<% end %>
+<div class="info" id="list">
+	<hr>
+	<% @sentiments.each do |sentiment| %>
+			<%= sentiment.text %> | 
+			<%= sentiment.behavior %> | 
+			<%= sentiment.rating %>
+		<hr>
+	<% end %>
+</div>
 
 <h4 id="link">
 	<%= link_to 'Homepage', root_path %> | 

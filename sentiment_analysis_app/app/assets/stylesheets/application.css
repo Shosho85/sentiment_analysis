@@ -20,9 +20,24 @@
 	width: 500px;
 	text-align: center;
 	font-family: comic sans ms;
-	color: maroon;
+	color: red;
 }
 
 #link {
 	text-align: center;
+}
+
+.info {
+	/*color: #20120F;*/
+	color: white;
+	text-decoration: bold;
+	font-size: 25px;
+}
+
+#list {
+	text-align: center;
+}
+
+body {
+	background: url("http://bgfons.com/upload/brick_texture99.jpg") no-repeat center center fixed;
 }
