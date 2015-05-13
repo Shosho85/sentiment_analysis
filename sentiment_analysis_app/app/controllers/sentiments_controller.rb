@@ -6,7 +6,6 @@ class SentimentsController < ApplicationController
 
 	def show
 		@sentiment = Sentiment.find(params[:id])
-		@behavior = JSON.(params["type"])
 	end
 
 	def new
@@ -14,8 +13,13 @@ class SentimentsController < ApplicationController
 	end
 
 	def create
-		@sentiment = Sentiment.new(sentiment_params)	
-
+		@sentiment = Sentiment.new(sentiment_params)
+		alchemyapi = AlchemyAPI.new
+		result = alchemyapi.sentiment('text', @sentiment.text)
+		behavior = result["docSentiment"]["type"]
+		rating = result["docSentiment"]["score"]
+		@sentiment.update({behavior: behavior, rating: rating})
+		
 		if @sentiment.save
 			redirect_to @sentiment
 		else
