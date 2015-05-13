@@ -5,3 +5,4 @@ class Sentiment < ActiveRecord::Base
 	# validates :rating, presence: true, numericality: true 
 
 end 
+

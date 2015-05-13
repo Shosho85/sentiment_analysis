@@ -92,31 +92,31 @@ class AlchemyAPI
 	def initialize()
 	
 		begin
-			key = File.read('api_key.txt')
-			key.strip!
+			key = 'a41f0fd9086020292f63f0914da48d9474970258'
+		# 	key.strip!
 
-			if key.empty?
-				#The key file should't be blank
-				puts 'The api_key.txt file appears to be blank, please copy/paste your API key in the file: api_key.txt'
-				puts 'If you do not have an API Key from AlchemyAPI please register for one at: http://www.alchemyapi.com/api/register.html'			
-				Process.exit(1)
-			end
+		# 	if key.empty?
+		# 		#The key file should't be blank
+		# 		puts 'The api_key.txt file appears to be blank, please copy/paste your API key in the file: api_key.txt'
+		# 		puts 'If you do not have an API Key from AlchemyAPI please register for one at: http://www.alchemyapi.com/api/register.html'			
+		# 		Process.exit(1)
+		# 	end
 			
-			if key.length != 40
-				#Keys should be exactly 40 characters long
-				puts 'It appears that the key in api_key.txt is invalid. Please make sure the file only includes the API key, and it is the correct one.'
-				Process.exit(1)
-			end
+		# 	if key.length != 40
+		# 		#Keys should be exactly 40 characters long
+		# 		puts 'It appears that the key in api_key.txt is invalid. Please make sure the file only includes the API key, and it is the correct one.'
+		# 		Process.exit(1)
+		# 	end
 
 			@apiKey = key
-		rescue => err
-			#The file doesn't exist, so show the message and create the file.
-			puts 'API Key not found! Please copy/paste your API key into the file: api_key.txt'
-			puts 'If you do not have an API Key from AlchemyAPI please register for one at: http://www.alchemyapi.com/api/register.html'
+		# rescue => err
+		# 	#The file doesn't exist, so show the message and create the file.
+		# 	puts 'API Key not found! Please copy/paste your API key into the file: api_key.txt'
+		# 	puts 'If you do not have an API Key from AlchemyAPI please register for one at: http://www.alchemyapi.com/api/register.html'
 		
-			#create a blank file to hold the key
-			File.open("api_key.txt", "w") {}
-			Process.exit(1)
+		# 	#create a blank file to hold the key
+		# 	File.open("api_key.txt", "w") {}
+		# 	Process.exit(1)
 		end
 	end
 
@@ -719,18 +719,18 @@ end
 # none
 #
 
-if __FILE__==$0
-  	# this will only run if the script was the main, not load'd or require'd
-	if ARGV.length == 1
-		if (ARGV[0].length == 40)
-			puts 'Key: ' + ARGV[0] + ' was written to api_key.txt'
-			puts 'You are now ready to start using AlchemyAPI. For an example, run: ruby example.rb'
-			File.open('api_key.txt','w') {|f| f.write(ARGV[0]) }
-		else
-			puts 'The key appears to invalid. Please make sure to use the 40 character key assigned by AlchemyAPI'
-		end
-	end
+# if __FILE__==$0
+#   	# this will only run if the script was the main, not load'd or require'd
+# 	if ARGV.length == 1
+# 		if (ARGV[0].length == 40)
+# 			puts 'Key: ' + ARGV[0] + ' was written to api_key.txt'
+# 			puts 'You are now ready to start using AlchemyAPI. For an example, run: ruby example.rb'
+# 			File.open('api_key.txt','w') {|f| f.write(ARGV[0]) }
+# 		else
+# 			puts 'The key appears to invalid. Please make sure to use the 40 character key assigned by AlchemyAPI'
+# 		end
+# 	end
 
-end
+# end
 
 

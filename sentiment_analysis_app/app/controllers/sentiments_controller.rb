@@ -5,7 +5,8 @@ class SentimentsController < ApplicationController
 	end
 
 	def show
-		@sentiment = Sentiment.find(params[:id])		
+		@sentiment = Sentiment.find(params[:id])
+		@behavior = JSON.(params["type"])
 	end
 
 	def new
@@ -13,7 +14,8 @@ class SentimentsController < ApplicationController
 	end
 
 	def create
-		@sentiment = Sentiment.new(sentiment_params)
+		@sentiment = Sentiment.new(sentiment_params)	
+
 		if @sentiment.save
 			redirect_to @sentiment
 		else
